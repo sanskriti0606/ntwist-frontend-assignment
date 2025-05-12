@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Contact Us</h2>
+    </aside>
+
+    <main class="main-content">
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          pattern="[A-Za-z ]+"
+          title="Name should only contain letters and spaces."
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+        ></textarea>
+
+        <!-- ⭐ Star Rating Widget -->
+        <label>Rate Us:</label>
+        <div class="rating" id="rating">
+          <span data-value="5">&#9733;</span>
+          <span data-value="4">&#9733;</span>
+          <span data-value="3">&#9733;</span>
+          <span data-value="2">&#9733;</span>
+          <span data-value="1">&#9733;</span>
+        </div>
+        <input type="hidden" id="ratingValue" name="rating" />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="confirmationMessage" class="hidden">✅ Form submitted successfully!</p>
+      <p id="timeDisplay">⏱️ Time spent filling form: <span id="timeSpent">0</span> seconds</p>
+    </main>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
