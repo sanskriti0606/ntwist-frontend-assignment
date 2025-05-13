@@ -4,15 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const timeSpent = document.getElementById("timeSpent");
   const confirmationMessage = document.getElementById("confirmationMessage");
+  const ratingInput = document.getElementById("ratingValue"); // <- This must exist in HTML
 
-  // Start time tracking
   form.addEventListener("focusin", () => {
     if (!startTime) {
       startTime = new Date();
     }
   });
 
-  // Handle form submission
   window.handleSubmit = function (event) {
     event.preventDefault();
 
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
     startTime = null;
 
-    // Reset rating UI
     document.querySelectorAll('.rating span').forEach(star => {
       star.classList.remove('selected');
     });
@@ -34,19 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000);
   };
 
-  // ⭐ Rating logic
   const ratingStars = document.querySelectorAll('.rating span');
-  const ratingInput = document.getElementById('ratingValue');
 
   ratingStars.forEach(star => {
     star.addEventListener('click', () => {
       const value = star.getAttribute('data-value');
-      ratingInput.value = value;
+      if (ratingInput) {
+        ratingInput.value = value;
+      }
 
-      // Remove previous selections
       ratingStars.forEach(s => s.classList.remove('selected'));
 
-      // Highlight selected stars
       ratingStars.forEach(s => {
         if (s.getAttribute('data-value') <= value) {
           s.classList.add('selected');
@@ -54,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Optional hover effect (can be removed)
     star.addEventListener('mouseenter', () => {
       ratingStars.forEach(s => s.classList.remove('hovered'));
       ratingStars.forEach(s => {

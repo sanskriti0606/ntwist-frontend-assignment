@@ -9,40 +9,28 @@
 <body>
   <div class="container">
     <aside class="sidebar">
-      <h2>Contact Us</h2>
+      <h2>Navigation</h2>
+      <ul class="nav-links">
+        <li><a href="index.html">Contact Form</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="sort.html">Sortable List</a></li>
+      </ul>
     </aside>
 
     <main class="main-content">
+      <h1>Contact Us</h1>
       <form id="contactForm" onsubmit="handleSubmit(event)">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          pattern="[A-Za-z ]+"
-          title="Name should only contain letters and spaces."
-        />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-        ></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
 
-        <!-- ⭐ Star Rating Widget -->
-        <label>Rate Us:</label>
-        <div class="rating" id="rating">
+        <label>Rate our service:</label>
+        <div class="rating">
           <span data-value="5">&#9733;</span>
           <span data-value="4">&#9733;</span>
           <span data-value="3">&#9733;</span>
@@ -54,8 +42,13 @@
         <button type="submit">Submit</button>
       </form>
 
-      <p id="confirmationMessage" class="hidden">✅ Form submitted successfully!</p>
-      <p id="timeDisplay">⏱️ Time spent filling form: <span id="timeSpent">0</span> seconds</p>
+      <div id="confirmationMessage" class="hidden">
+        Thank you! Your response has been recorded.
+      </div>
+
+      <div id="timeDisplay">
+        Time spent filling the form: <span id="timeSpent">0</span> seconds
+      </div>
     </main>
   </div>
 

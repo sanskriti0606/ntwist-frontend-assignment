@@ -6,7 +6,6 @@ function sortNames() {
       .map(li => li.textContent)
       .sort((a, b) => a.localeCompare(b));
   
-    // Clear and append sorted
     ul.innerHTML = "";
     sortedItems.forEach(name => {
       const li = document.createElement("li");
