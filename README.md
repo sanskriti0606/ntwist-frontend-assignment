@@ -40,12 +40,12 @@ This project is a frontend assignment where we implement a contact form with val
 ### 1. Clone the Repository
    To clone the repository, run the following command in your terminal:
 
-   git clone https://github.com/yourusername/ntwist-frontend-assignment.git
+   git clone https://github.com/sanskriti0606/ntwist-frontend-assignment.git
 ## How to Run Locally
 
 ### 1. Clone the Repository
    To clone the repository, run the following command in your terminal:
-git clone https://github.com/yourusername/ntwist-frontend-assignment.git
+git clone https://github.com/sanskriti0606/ntwist-frontend-assignment.git
 
 ### 2. Navigate to the Project Directory
 Once the repository is cloned, navigate into the project folder:
